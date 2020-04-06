@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <title>Ficha</title>
+</head>
+
+<body onload="check();refreshvida();inicia()">
+
+    <div id="perfil">
+
+        <div>
+            <input type="text" placeholder="Nome" id="nomeinput" spellcheck="false"><br>
+            <div style="display:inline-flex;">
+                <input type="number" min="0" placeholder="00" id="idade">
+                <p>Anos</p>
+            </div>
+
+            <div id="container-foto">
+                <img id="pic" src="img/icon.jpg" alt="">
+                <input class="inputfile" type='file' id="foto" onchange="readURL(this);" />
+                <label for="foto" id="labelft">Easter Egg</label>
+                <img src="img/wasted.png" id="wasted">
+            </div>
+
+            <div id="container-barra">
+                <div id="barra-vida" class="barra-verde">
+                    <div id="vidainputs">
+                        <input type="number" id="vida" value="20" onkeyup="refreshvida()" min="0" max="19">
+                        <p>/</p>
+                        <input type="number" id="vidamax" value="20" onkeyup="refreshvida()" min="1">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="background-color: rgba(165, 42, 42, 0);">
+            <p style="margin-top: 18px;">História</p>
+            <textarea id="lore" spellcheck="false"></textarea>
+        </div>
+
+
+    </div>
+
+
+    <p align=center>Atributos</p>
+
+    <div id="atributos">
+        <!--Atributos-->
+
+        <div class="att">
+            <p>Força</p> <input type="number" id="forca" placeholder="00" min="0" max="30">
+            <p>Destreza</p> <input type="number" id="dest" placeholder="00" min="0" max="30">
+        </div>
+
+        <div class="att">
+            <p>Constituição</p> <input type="number" id="constit" placeholder="00" min="0" max="30">
+            <p>Inteligência</p> <input type="number" id="inteli" placeholder="00" min="0" max="30">
+        </div>
+
+        <div class="att">
+            <p>Sabedoria</p> <input type="number" id="sabed" placeholder="00" min="0" max="30">
+            <p>Carisma</p> <input type="number" id="carism" placeholder="00" min="0" max="30">
+        </div>
+
+    </div>
+    
+    <p align=center>Perícias</p>
+
+    <div id="pericias">
+        <!--Pericias-->
+
+        <div class="att">
+            <p>Hack</p> <input type="number" id="hack" placeholder="00" min="0" max="30">
+            <p>Atirar</p> <input type="number" id="atirar" placeholder="00" min="0" max="30">
+            <p>Rastrear</p> <input type="number" id="rastrear" placeholder="00" min="0" max="30">
+            <p>Furtividade</p> <input type="number" id="furtivo" placeholder="00" min="0" max="30">
+            <p>Primeiros Socorros</p> <input type="number" id="primsoc" placeholder="00" min="0" max="30">
+        </div>
+
+        <div class="att">
+            <p>Luta</p> <input type="number" id="luta" placeholder="00" min="0" max="30">
+            <p>Dirigir</p> <input type="number" id="dirigir" placeholder="00" min="0" max="30">
+            <p>Atletismo</p> <input type="number" id="atlet" placeholder="00" min="0" max="30">
+            <p>Tolerância</p> <input type="number" id="toler" placeholder="00" min="0" max="30">
+            <p>Sobrevivência Urbana</p> <input type="number" id="sobrev" placeholder="00" min="0" max="30">
+        </div>
+
+        <div class="att">
+            <p>Mentir</p> <input type="number" id="mentir" placeholder="00" min="0" max="30">
+            <p>Invasão</p> <input type="number" id="invad" placeholder="00" min="0" max="30">
+            <p>Conhecimento</p> <input type="number" id="conhec" placeholder="00" min="0" max="30">
+            <p>falsificação</p> <input type="number" id="falsi" placeholder="00" min="0" max="30">
+            <p>Ciência Forense</p> <input type="number" id="cienc" placeholder="00" min="0" max="30">
+        </div>
+
+    </div>
+        <!--Fim Pericias-->
+
+
+    <div id="botoes">
+        <button onclick="resetar()">Reset</button><button onclick="gravar()" id="salvar"style="margin-left: 10px;">Salvar</button>
+
+        <div id="salvomsg">
+            <p id="salvo">salvo <img id="check" src="img/check.png"></p>
+        </div>
+
+
+    </div>
+
+
+<!--Escrito por Vitor Sammarco-->
+</body>
+</html>
