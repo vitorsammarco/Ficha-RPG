@@ -23,6 +23,7 @@ html,body
     height: 100%;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden; 
 }
 
 /*Barra de Rolagem Personalizada*/
@@ -438,6 +439,7 @@ line-height: 22px;
 
 @media (max-width: 800px) {
 
+::-webkit-scrollbar{width: 12px;}
 
 #notas{
 width: 95%;
