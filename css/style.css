@@ -16,15 +16,15 @@ outline: none;
   background: white;
 }
 
-
+/*
 html,body
 {
     width: 100%;
     height: 100%;
     margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
+    padding: 0px; 
 }
+*/
 
 /*Barra de Rolagem Personalizada*/
 /* width - Largura */
@@ -88,6 +88,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+#nomeinput{
+width: 100%;
+}
 
 #lore{
 margin-top: 5px;
