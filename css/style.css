@@ -94,7 +94,7 @@ background-color: transparent;
 resize: none;
 }
 
-#atributos,#pericias{
+#atributos,#pericias,.triade{
 width: 90%;
 display:grid;
 grid-template-columns: 1fr 1fr 1fr;
@@ -171,7 +171,7 @@ opacity: 0;
 position: absolute;
 top: 0;
 left: 0;
-z-index: 2;
+z-index: 1;
 background-image: url('../img/add.png');
 background-size: cover;
 width: 180px;
@@ -204,7 +204,7 @@ transition: all 0.4s;
 
 button:hover{
 background-color: rgb(12, 12, 12);
-box-shadow: rgb(0, 0, 0) 0 0 15px0 -10px;
+box-shadow: rgb(0, 0, 0) 0 0 15px -8px;
 }
 
 #salvo{
@@ -231,6 +231,33 @@ right: -90px;
 #check{
 vertical-align: middle;
 margin-right: 5px;
+}
+
+
+#note{
+position: relative;
+background-color: black;
+height: 50px;
+width: 50px;
+border-radius: 100%;
+margin-top: 8px;
+text-align: center;
+transition: all 0.5s;
+padding: 2px;
+cursor: pointer;
+}
+
+#note img{
+position: absolute;
+width: 35px;
+top: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(-50%);
+}
+
+#note:hover{
+background-color: rgb(12, 12, 12);
+box-shadow: white 0 0 10px;
 }
 
 #container-barra{
@@ -309,13 +336,82 @@ background-color: darkred;
 background: linear-gradient(0deg, rgba(128,0,0,1) 0%, rgba(203,41,41,1) 29%, rgba(237,95,95,1) 47%, rgba(239,50,50,1) 66%, rgba(240,50,50,1) 75%, rgba(255,203,203,1) 85%, rgba(253,45,45,1) 97%);
 }
 
+
+#notas-container{
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 2;
+}
+
+#notas{
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(-50%);
+width: 85%;
+height: 80%;
+background-color: rgb(24, 24, 24);
+text-align: center;
+box-shadow: 0 0 25px black;
+z-index: 3 !important;
+}
+
+#container-fechar{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+#notas p{
+margin-top: 8px;
+}
+
+#textonotas{
+color: white;
+box-shadow: black 0 0 18px -10px;
+padding:5px 2px 0 2px;
+font-size: 18px;
+line-height: 24px;
+text-align: justify;
+background-color: rgb(17, 17, 17);
+resize: none;
+width: 97%;
+height: 86%;
+margin-top: 10px;
+}
+
+#fechar{
+top: 0 !important;
+margin-top: 0 !important;
+margin-right: 2px;
+font-size: 27px;
+float: right;
+user-select: none;
+transform: scaleX(1.1);
+line-height: 100%;
+padding: 12px 8px 2px 8px;
+transition: all 0.3s;
+}
+
+#fechar:hover{
+background-color: brown;
+}
+
+
 @media (max-width: 1200px) {
 
 #salvar{
 margin-bottom: 20px;
 }
 
-#pericias,#atributos{
+#pericias,#atributos,.triade{
 width: 95%;
 }
 
@@ -333,6 +429,20 @@ line-height: 22px;
 
 @media (max-width: 800px) {
 
+
+#notas{
+width: 95%;
+height: 90%
+}
+
+#notas p{
+margin-top: 8px;
+}
+
+#fechar{
+margin-left:-40px ;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: textarea;
@@ -340,16 +450,18 @@ input::-webkit-inner-spin-button {
 }
 
 #lore{
-width: 95%;
+width: 92%;
+background-color: rgba(0, 0, 0, 0.3);
 }
 
 #perfil{
 width: 100%;
 display: block;
 margin-bottom: 10px;
+grid-template-columns: 1fr 1fr;
 }
 
-#atributos,#pericias{
+#atributos,#pericias,.triade{
 width: 100%;
 grid-template-columns: 1fr;
 }
@@ -364,6 +476,7 @@ line-height: 40px;
 position: relative;
 width: 100%;
 text-align: center;
+margin-top: -15px;
 }
 
 #salvar{

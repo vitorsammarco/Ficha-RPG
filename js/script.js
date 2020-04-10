@@ -1,4 +1,19 @@
 
+function notas() {
+    
+    $("#note").click(function () {
+    $('#notas-container').fadeIn(300);
+    $("#notas").show(300)
+    $(document.body).css("overflow-y", "hidden");
+    })
+
+    $("#fechar,#container-fechar").click(function () {
+    $("#notas").hide(300)
+    $('#notas-container').fadeOut(300);
+    $(document.body).css("overflow-y", "auto");
+     gravar();
+
+})}
 
 function refreshvida() {
     var vidamax = document.getElementById('vidamax').value;
@@ -91,6 +106,10 @@ function inicia() {
     if (localStorage.VidaAtual != undefined) {
         vidaatual = localStorage.VidaAtual ;
         document.getElementById("vida").value = vidaatual;
+    }
+    if (localStorage.Anotacoes != undefined) {
+        txtanotacoes = localStorage.Anotacoes ;
+        document.getElementById("textonotas").value = txtanotacoes;
     }
 
     /* 1-5 Atributos */
@@ -217,6 +236,7 @@ function gravar() {
     inteli = document.getElementById("inteli").value;
     sabed = document.getElementById("sabed").value;
     carism = document.getElementById("carism").value;
+    txtanotacoes = document.getElementById("textonotas").value;
     localStorage.Fotoperfil = fotop;
     localStorage.Nome = vnome;
     localStorage.Idade = vidade;
@@ -244,6 +264,7 @@ function gravar() {
     localStorage.Inteligencia = inteli;
     localStorage.Sabedoria = sabed;
     localStorage.Carisma = carism;
+    localStorage.Anotacoes = txtanotacoes;
 }
 
 function resetar() {

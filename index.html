@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
     <title>Ficha</title>
 </head>
 
-<body onload="check();refreshvida();inicia()">
+<body onload="check();refreshvida();inicia(),notas()">
 
     <div id="perfil">
 
@@ -71,7 +72,7 @@
         </div>
 
     </div>
-    
+
     <p align=center>Perícias</p>
 
     <div id="pericias">
@@ -102,20 +103,40 @@
         </div>
 
     </div>
-        <!--Fim Pericias-->
+    <!--Fim Pericias-->
 
 
-    <div id="botoes">
-        <button onclick="resetar()">Reset</button><button onclick="gravar()" id="salvar"style="margin-left: 10px;">Salvar</button>
+    <div class="triade">
 
-        <div id="salvomsg">
-            <p id="salvo">salvo <img id="check" src="img/check.png"></p>
+        <div id="note">
+            <img src="img/note.png">
         </div>
 
+        <div id="botoes">
+            <button onclick="resetar()">Reset</button><button onclick="gravar()" id="salvar"
+                style="margin-left: 10px;">Salvar</button>
+            <div id="salvomsg">
+                <p id="salvo">salvo <img id="check" src="img/check.png"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="notas-container">
+    <div id="container-fechar"></div>
+        <div id="notas">
+            <p id="fechar">X</p>
+            <p>Anotações</p>
+            <textarea id="textonotas" spellcheck="false" onkeyup=""></textarea>
+        </div>
 
     </div>
 
 
+
+
 <!--Escrito por Vitor Sammarco-->
 </body>
+
 </html>
